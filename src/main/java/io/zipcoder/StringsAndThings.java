@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import java.util.Objects;
+
 /**
  * @author tariq
  */
@@ -14,8 +16,18 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input) {
+        int n = 0;
+
+        String[] words = input.split(" ");
+        for (String word : words){//THIS IS A "FOR EACH" LOOP
+            if (word.endsWith("y") || word.endsWith("z")){
+                n++;
+            }
+
+        }
+
+        return n;
     }
 
     /**
@@ -28,7 +40,10 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+
+
+
+        return base.replace(remove, "");
     }
 
     /**
@@ -40,7 +55,21 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int is = 0;
+        int not = 0;
+
+        for(int i = 0; i <= input.length()-3; i++){
+            if (input.substring(i, i+2).equals("is")) {
+                is++;
+            } else if (input.substring(i, i+3).equals("not")){
+                not++;
+            }
+        }
+
+        if(input.length() >= 2 && input.substring(input.length() - 2).equals("is")){
+            is++;
+        }
+            return is == not;
     }
 
     /**
