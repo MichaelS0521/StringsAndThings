@@ -102,7 +102,7 @@ public class StringsAndThings {
      */
     public Integer countTriple(String input) {
         int num = 0;
-        for (int i = 0; i < input.length(); i++) {
+        for (int i = 0; i < input.length() - 1; i++) {
             if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) {
                 num++;
             }
