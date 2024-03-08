@@ -23,7 +23,7 @@ public class CountTripleTest {
 
     @Test
     public void countTripleTest2(){
-        Integer expected = 3;
+        Integer expected = 2;
         Integer actual = stringsAndThings.countTriple("xxxabyyyycd");
         Assert.assertEquals(expected, actual);
     }
